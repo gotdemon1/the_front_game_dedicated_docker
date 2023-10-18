@@ -20,9 +20,8 @@ else
 fi
 
 echo "---Taking ownership of data...---"
+chown -R root:${GID} /opt/scripts
 chown -R ${UID}:${GID} ${DATA_DIR}
-mkdir -p /tmp/dump
-chown -R ${UID}:${GID} /tmp/dump
 
 echo "---Starting...---"
 term_handler() {

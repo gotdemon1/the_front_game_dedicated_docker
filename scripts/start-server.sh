@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ ! -f ${STEAMCMD_DIR}/steamcmd.sh ]; then
     echo "SteamCMD not found!"
-    wget -q -O ${STEAMCMD_DIR}/steamcmd_linux.tar.gz http://media.steampowered.com/client/steamcmd_linux.tar.gz
+    wget -q -O ${STEAMCMD_DIR}/steamcmd_linux.tar.gz http://media.steampowered.com/client/steamcmd_linux.tar.gz 
     tar --directory ${STEAMCMD_DIR} -xvzf /serverdata/steamcmd/steamcmd_linux.tar.gz
     rm ${STEAMCMD_DIR}/steamcmd_linux.tar.gz
 fi
@@ -18,19 +18,19 @@ else
 fi
 
 echo "---Update Server---"
-
 if [ "${USERNAME}" == "" ]; then
     if [ "${VALIDATE}" == "true" ]; then
-        echo "---Validating installation---"
+    	echo "---Validating installation---"
         ${STEAMCMD_DIR}/steamcmd.sh \
-        +@sSteamCmdForcePlatformType windows
+        +@sSteamCmdForcePlatformType windows \
         +force_install_dir ${SERVER_DIR} \
         +login anonymous \
         +app_update ${GAME_ID} validate \
         +quit
     else
+        echo "start download ${GAME_ID}"
         ${STEAMCMD_DIR}/steamcmd.sh \
-        +@sSteamCmdForcePlatformType windows
+        +@sSteamCmdForcePlatformType windows \
         +force_install_dir ${SERVER_DIR} \
         +login anonymous \
         +app_update ${GAME_ID} \
@@ -38,16 +38,16 @@ if [ "${USERNAME}" == "" ]; then
     fi
 else
     if [ "${VALIDATE}" == "true" ]; then
-        echo "---Validating installation---"
+    	echo "---Validating installation---"
         ${STEAMCMD_DIR}/steamcmd.sh \
-        +@sSteamCmdForcePlatformType windows
+        +@sSteamCmdForcePlatformType windows \
         +force_install_dir ${SERVER_DIR} \
         +login ${USERNAME} ${PASSWRD} \
         +app_update ${GAME_ID} validate \
         +quit
     else
         ${STEAMCMD_DIR}/steamcmd.sh \
-        +@sSteamCmdForcePlatformType windows
+        +@sSteamCmdForcePlatformType windows \
         +force_install_dir ${SERVER_DIR} \
         +login ${USERNAME} ${PASSWRD} \
         +app_update ${GAME_ID} \

@@ -1,3 +1,4 @@
 data/
 cmd/
 .git
+docker-compose.yaml
