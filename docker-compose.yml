@@ -1,0 +1,39 @@
+version: '3.3'
+services:
+  vrising:
+    container_name: thefront
+    image: steamcmdwine64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - TZ=Europe/Moscow
+      - GAME_NAME=thefront
+      - GAME_PORT=27016
+      - GAME_ID=2334200
+      - GAME_PARAMS=
+      - MaxPlayers=10
+      - UID=1000
+      - VALIDATE=false
+      - USERNAME=
+      - PASSWRD=
+      - GID=1000
+      - MAXPLAYERS=10
+      - SERVER_NAME=dedx
+      - SERVER_PASS=321
+      - SERVER_ADMIN=76561197960287930
+      - PUBLIC_IP=185.185.59.36
+      - BEACON_PORT=27017
+      - QUERY_PORT=27018
+      - DOWN_PORT=27019
+      - MAX_FRAME=35
+    volumes:
+      - './data:/serverdata/serverfiles:rw'
+      - './cmd:/serverdata/steamcmd:rw'
+      - './scripts:/opt/scripts'
+    ports:
+      - '27016:27016/tcp'
+      - '27016:27016/udp'
+      - '27017:27017/tcp'
+      - '27017:27017/udp'
+      
