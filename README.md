@@ -1,4 +1,5 @@
-Пока что вынесены такие параметры
+<p>Пока что вынесены такие параметры</p>
+<pre>
       - TZ=Europe/Moscow
       - GAME_NAME=thefront
       - GAME_PORT=27016
@@ -19,3 +20,4 @@
       - QUERY_PORT=27018
       - DOWN_PORT=27019
       - MAX_FRAME=35
+</pre>
