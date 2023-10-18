@@ -58,6 +58,4 @@ fi
 
 echo "---Start Server---"
 cd ${SERVER_DIR}
-echo "Listen?MaxPlayers=$MAXPLAYERS -server -game -QueueThreshold=8 -ServerName=$SERVER_NAME -ServerPassword=$SERVER_PASS -ServerAdminAccounts=$SERVER_ADMIN -log log=log.log -locallogtimes -DedicatedServer -EnableParallelCharacterTickFunction -UseDynamicPhysicsScene -OutIPAddress=$PUBLIC_IP -ServerID=1b5cf939-657e-4c7f-a954-4a296768b4fd -port=$GAME_PORT -BeaconPort=$BEACON_PORT -QueryPort=$QUERY_PORT -Game.PhysicsVehicle=true -ansimalloc -Game.MaxFrameRate=$MAX_FRAME -ShutDownServicePort=$DOWN_PORT";
-
 ./ProjectWar/Binaries/Linux/TheFrontServer ProjectWar_Start?DedicatedServer?MaxPlayers=$MAXPLAYERS -server -game -QueueThreshold=8 -ServerName="$SERVER_NAME" -ServerPassword=$SERVER_PASS -ServerAdminAccounts=$SERVER_ADMIN -log log=log.log -locallogtimes -EnableParallelCharacterMovementTickFunction -EnableParallelCharacterTickFunction -UseDynamicPhysicsScene -OutIPAddress=$PUBLIC_IP -ServerID=1b5cf939-657e-4c7f-a954-4a296768b4fd -port=$GAME_PORT -BeaconPort=$BEACON_PORT -QueryPort=$QUERY_PORT -Game.PhysicsVehicle=true -ansimalloc -Game.MaxFrameRate=$MAX_FRAME -ShutDownServicePort=$DOWN_PORT

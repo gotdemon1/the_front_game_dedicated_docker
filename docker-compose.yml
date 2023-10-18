@@ -2,10 +2,7 @@ version: '3.3'
 services:
   vrising:
     container_name: thefront
-    image: steamcmdwine64
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ich777/steamcmd:latest
     environment:
       - TZ=Europe/Moscow
       - GAME_NAME=thefront
